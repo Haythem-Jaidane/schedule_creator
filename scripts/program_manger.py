@@ -18,11 +18,12 @@ class create_table:
         data=data[:num_day]
         for i in range(from_,to):
             row=[(str(i)+"h to "+str(i+1)+"h",1)]
-                for g in range(num_day):
-                    row.append(["free",1])
+            for g in range(num_day):
+                row.append(["free",1])
             data.append(row)
+        return data
     
-    def web2pdf(self,date,name):
+    def web2pdf(self,date,name,to_say=""):
         
         pdf_object=FPDF()
         
@@ -49,6 +50,6 @@ class create_table:
             pdf_object.ln(height*l)
         
         pdf_object.ln(20)
-        pdf_object.cell(pdf_object.w,txt="quote")
+        pdf_object.cell(pdf_object.w,txt=to_say)
             
         pdf_object.output(name+".pdf")
