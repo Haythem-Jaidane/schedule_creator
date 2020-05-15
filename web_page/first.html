@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>settings</title>
+    </head>
+    <body>
+        <div>
+            <form method="POST" action="/create">
+                <label>when your schedule start (please select a monday)</label>
+                <input type="date" name="start">
+                <br/>
+                <label>number of days of schedule(min 1 day max 7 day)</label>
+                <input type="number" name="day_number">
+                <br/>
+                <label>when you wake up</label>
+                <input type="number" name="wakeup">
+                <br/>
+                <label>when you sleep</label>
+                <input type="number" name="sleep">
+                <br/>
+                <input type="submit" value="Enter">
+            </form>
+        </div>
+    </body>
+</html>
