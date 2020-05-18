@@ -6,24 +6,26 @@ from fpdf import FPDF
 
 class create_table:
     
+    duration=0
+    number=0
+    
     def create_data(self,from_,to,num_day):
-        if(num_day>7):
-            num_day=7
-        if(num_day<1):
-            num_day=1
+        num_day=int(num_day)
+        self.duration=int(to)-int(from_)
+        self.number=num_day
         data=[
                 [("    ",1),("Monday",1),("Tuesday",1),("Wednesday",1)
                 ,("Thursday",1), ("Friday",1), ("Saturday",1),("Sunday",1)]
             ]
         data=data[:num_day]
-        for i in range(from_,to):
+        for i in range(int(from_),int(to)):
             row=[(str(i)+"h to "+str(i+1)+"h",1)]
             for g in range(num_day):
                 row.append(["free",1])
             data.append(row)
         return data
     
-    def web2pdf(self,date,name,to_say=""):
+    def web2pdf(self,data,date,name="sanstitre",to_say=""):
         
         pdf_object=FPDF()
         
