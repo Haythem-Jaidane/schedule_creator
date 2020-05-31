@@ -4,14 +4,14 @@
         <title>create a schedule</title>
     </head>
     <body>
-        <form method="POST" action="/pdf_create">
             {% for i in range(1,table.num+1) %}
                 <div>
-                    <button>{{table.table[0][i][0]}}</button>
+                    <button><a href=#{{table.table[0][i][0]}}>{{table.table[0][i][0]}}</a></button>
                 </div>   
             {% endfor %}
+            <form method="POST" action="/pdf_create">
             {% for i in range(1,table.num+1) %}
-                <div>
+                <div id={{table.table[0][i][0]}}>
                     <table>
                     <tr>
                         <td>
@@ -32,7 +32,6 @@
                     </tr>
                     {% endfor %}
                 </table>
-                </div>
             {% endfor %}
             <input type="submit" value="create your PDF file">
         </form>
