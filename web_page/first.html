@@ -10,13 +10,16 @@
                 <input type="date" name="start">
                 <br/>
                 <label>number of days of schedule(min 1 day max 7 day)</label>
-                <input type="number" name="day_number">
+                <input type="number" name="day_number" min=1 max=7>
                 <br/>
                 <label>when you wake up</label>
-                <input type="number" name="wakeup">
+                <input type="number" name="wakeup" min=0 max=23>
                 <br/>
                 <label>when you sleep</label>
-                <input type="number" name="sleep">
+                <input type="number" name="sleep" min=0 max=23>
+                <br/>
+                <label>name of file</label>
+                <input type="text" name="name">
                 <br/>
                 <input type="submit" value="Enter">
             </form>
