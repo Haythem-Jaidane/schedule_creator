@@ -1,0 +1,50 @@
+body{
+    background: rgb(21,41,205);
+    background: linear-gradient(90deg, rgba(21,41,205,1) 0%, 
+                    rgba(48,114,201,1) 50%, rgba(38,255,251,1) 100%);
+    overflow:scroll-x;
+}
+
+.contain{
+    position: center;
+    margin:10%;
+    margin-left:20% ;
+    text-align:center;
+    border: 5px solid white;
+    color:white;
+    font-family:'Times New Roman', Times, serif;
+    font-size:30px;
+    font-weight: bolder;
+    padding:2%;
+    width:60%;
+}
+
+.explain{
+    text-align:center;
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size:35px;
+    margin:5%
+}
+
+.box{
+    padding:5px;
+    width:15%;
+    border-radius:20%;
+    font-size:20px;
+    font-weight: bolder;
+    margin:10px;
+    border: 3px solid white;
+}
+
+.enter{
+    margin-top: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(78, 77, 77);
+    font-size: 25px;
+    border: 3px solid white;
+    border-radius: 35%;
+}
+
+.day_tab{
+    display:inline;
+}
