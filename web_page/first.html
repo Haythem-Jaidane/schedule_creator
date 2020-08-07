@@ -2,26 +2,32 @@
 <html>
     <head>
         <title>settings</title>
+        <link rel="stylesheet" href="../style/first.css">
     </head>
     <body>
-        <div>
+        <p class="explain">
+            this web site help you do make your own schedule of the week
+            <br/>
+            "time is money" 
+        </p>
+        <div class="contain">
             <form method="POST" action="/create">
-                <label>when your schedule start (please select a monday)</label>
-                <input type="date" name="start">
+                <label class=item>when your schedule start (please select a monday)</label>
+                <input type="date" name="start" class="box">
                 <br/>
-                <label>number of days of schedule(min 1 day max 7 day)</label>
-                <input type="number" name="day_number" min=1 max=7>
+                <label class=item>number of days of schedule(min 1 day max 7 day)</label>
+                <input type="number" name="day_number" min=1 max=7 class="box">
                 <br/>
-                <label>when you wake up</label>
-                <input type="number" name="wakeup" min=0 max=23>
+                <label class=item>when you wake up</label>
+                <input type="number" name="wakeup" min=0 max=23 class="box">
                 <br/>
-                <label>when you sleep</label>
-                <input type="number" name="sleep" min=0 max=23>
+                <label class=item>when you sleep</label>
+                <input type="number" name="sleep" min=0 max=23 class="box">
                 <br/>
-                <label>name of file</label>
-                <input type="text" name="name">
+                <label class=item>name of file</label>
+                <input type="text" name="name" class="box">
                 <br/>
-                <input type="submit" value="Enter">
+                <input type="submit" value="Create" class="enter">
             </form>
         </div>
     </body>
