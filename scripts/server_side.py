@@ -2,7 +2,7 @@ from flask import Flask,render_template,request
 import program_manger as pm
 
 
-app=Flask(__name__,template_folder="../web_page")
+app=Flask(__name__,template_folder="../web_page",static_folder="../style")
 obj=pm.create_table()
 
 @app.route('/')
