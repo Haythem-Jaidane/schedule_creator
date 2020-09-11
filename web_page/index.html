@@ -3,38 +3,47 @@
     <head>
         <title>create a schedule</title>
         <link rel="stylesheet" href="../style/first.css">
+        <link rel="stylesheet" href="../style/index.css">
+        <script type="text/javascript" src="{{ url_for('static', filename='./js_script/tabs.js')}}"></script>
     </head>
     <body>
+        <div class="page_content">
+        <div class="day_tab">
             {% for i in range(1,table.num+1) %}
-                <div class="day_tab">
-                    <button><a href=#{{table.table[0][i][0]}}>{{table.table[0][i][0]}}</a></button>
-                </div>   
+                    <button class="days" onclick="days_tabs(event,'{{table.table[0][i][0]}}')">
+                        {{table.table[0][i][0]}}
+                    </button>
             {% endfor %}
+        </div> 
             <form method="POST" action="/pdf_create">
             {% for i in range(1,table.num+1) %}
-                <div id={{table.table[0][i][0]}}>
+                <div class="days_content" id={{table.table[0][i][0]}}>
                     <table>
                     <tr>
-                        <td>
+                        <td style="padding:10px;" class="header_tags">
                             hour
                         </td>
-                        <td>
+                        <td style="padding:20px;" class="header_tags">
                             activity
                         </td>
-                        <td>
+                        <td style="padding:10px;" class="header_tags">
                             duration
                         </td>
                     </tr>
                     {% for l in range(1,table.duration+1)%}
                     <tr>
-                        <td><label>{{table.table[l][0][0]}}</label></td>
-                    <td><input type="text" name="{{l}}{{i}}time" value="{{table.table[l][i][0]}}" ></td>
-                        <td><input type="number" name="{{l}}{{i}}duration" value="{{table.table[l][i][1]}}"></td>
+                        <td class="time_label"><label>{{table.table[l][0][0]}}</label></td>
+                        <td style="padding-left:50px;"><input class="ac_text" type="text" name="{{l}}{{i}}time" value="{{table.table[l][i][0]}}" ></td>
+                        <td><input class="dur_text" type="number" name="{{l}}{{i}}duration" value="{{table.table[l][i][1]}}"></td>
                     </tr>
                     {% endfor %}
                 </table>
+                </div>
             {% endfor %}
-            <input type="submit" value="create your PDF file">
+            <div id="sub">
+                <input type="submit" value="Create your PDF file">
+            </div>
         </form>
+        </div>
     </body>
 </html>
