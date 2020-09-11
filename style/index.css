@@ -1,0 +1,95 @@
+.page_content{
+    margin: 145px 25%;
+    width: 45%;
+    
+    
+}
+
+.days{
+    color:black;
+    background-color: initial;
+    border:none;
+    font-family:'Times New Roman', Times, serif;
+    font-size:20px;
+    font-weight: bolder;
+    padding:10px;
+}
+
+.day_tab{
+    display: flex;
+    justify-content:center;
+    border: 2px solid white;
+    background-color: white;
+    
+}
+
+table{
+    display: flex;
+    justify-content:center;
+    margin:20px 10px;
+}
+
+.header_tags{
+    color:white;
+    font-family:'Times New Roman', Times, serif;
+    font-size:20px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.time_label{
+    color:black;
+    font-family:'Times New Roman', Times, serif;
+    font-size:20px;
+    font-weight: bolder;
+    padding-left:50px;
+    width:25%;
+}
+
+.ac_text{
+    background-color:initial;
+    border: 2px solid white;
+    border-radius: 10px;
+    color:whitesmoke;
+    font-family:'Times New Roman', Times, serif;
+    font-size:20px;
+    width: 70%;
+    
+}
+
+.dur_text{
+    background-color:initial;
+    border: 2px solid white;
+    border-radius: 10px;
+    color:whitesmoke;
+    font-family:'Times New Roman', Times, serif;
+    font-size:20px;
+    width: 25%;
+    margin-left:100px
+}
+
+.active{
+    background-color:lightskyblue;
+}
+
+.days_content{
+    display: none;
+    border: 2px solid white;
+}
+
+#sub{
+    display: flex;
+    justify-content:center;
+    margin:50px 0px;
+}
+
+#sub > input{
+    background-color: initial;
+    color:white;
+    font-family:'Times New Roman', Times, serif;
+    font-size:20px;
+    font-weight: bolder;
+    border:2px solid white;
+    border-radius: 20px;
+    padding:10px;
+}
