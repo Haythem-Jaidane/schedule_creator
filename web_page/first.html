@@ -10,25 +10,29 @@
             <br/>
             "time is money" 
         </p>
+        <div class="big-cont">
+            {% if error.er_bool==True%}
+            {% block content %}
+            <div class="error_block">
+                <p> check your input data </p>
+            </div>
+            {% endblock content%}
+        {% endif %}
         <div class="contain">
             <form method="POST" action="/create">
-                <label class=item>when your schedule start (please select a monday)</label>
-                <input type="date" name="start" class="box">
+                <input placeholder="when (week) your schedule start (monday)" onfocus="(this.type='date')" onblur="(this.type='text')" type="text" name="start" class="box" >
                 <br/>
-                <label class=item>number of days of schedule(min 1 day max 7 day)</label>
-                <input type="number" name="day_number" min=1 max=7 class="box">
+                <input type="number" name="day_number" min=1 max=7 class="box" placeholder="number of days of schedule(min 1 day max 7 day)">
                 <br/>
-                <label class=item>when you wake up</label>
-                <input type="number" name="wakeup" min=0 max=23 class="box">
+                <input type="number" name="wakeup" min=0 max=23 class="box" placeholder="when you wake up">
                 <br/>
-                <label class=item>when you sleep</label>
-                <input type="number" name="sleep" min=0 max=23 class="box">
+                <input type="number" placeholder="when you sleep" name="sleep" min=0 max=23 class="box">
                 <br/>
-                <label class=item>name of file</label>
-                <input type="text" name="name" class="box">
+                <input type="text" placeholder="name of file" name="name" class="box">
                 <br/>
                 <input type="submit" value="Create" class="enter">
             </form>
         </div>
+    </div>
     </body>
 </html>
