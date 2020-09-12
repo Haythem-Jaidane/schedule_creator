@@ -16,6 +16,7 @@ class create_table:
     data=[]
     date_tuple=""
     file_name="sans_titre"
+    Error=False
     
     def date_system(self,str_date):
         

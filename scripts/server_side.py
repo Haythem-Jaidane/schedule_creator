@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,send_file
+from flask import Flask,render_template,request,send_file,redirect
 import program_manger as pm
 import os,time
 
@@ -12,21 +12,26 @@ def settings():
     for i in os.listdir("../uploads"):
         if time.time()-os.path.getmtime("../uploads/"+i)>900:
             os.remove("../uploads/"+i)
-    return render_template("first.html")
+    return render_template("first.html",error={"er_bool":obj.Error})
 
 @app.route('/create',methods=['POST'])
 
 def create():
-    start=request.form["start"]
-    obj.file_name=request.form["name"]
-    obj.number=int(request.form["day_number"])
-    obj.start_hour=int(request.form["wakeup"])
-    obj.end_hour=int(request.form["sleep"])
-    obj.duration=int(request.form["sleep"])-int(request.form["wakeup"])
-    obj.date_system(start)
-    obj.create_data()
-    data_table={"table":obj.data,"num":obj.number,"duration":obj.duration}
-    return render_template("index.html",table=data_table)
+    try:
+        start=request.form["start"]
+        obj.file_name=request.form["name"]
+        obj.number=int(request.form["day_number"])
+        obj.start_hour=int(request.form["wakeup"])
+        obj.end_hour=int(request.form["sleep"])
+        obj.duration=int(request.form["sleep"])-int(request.form["wakeup"])
+        obj.date_system(start)
+        obj.create_data()
+        data_table={"table":obj.data,"num":obj.number,"duration":obj.duration}
+        obj.Error=False
+        return render_template("index.html",table=data_table)
+    except:
+        obj.Error=True
+        return redirect('/')
 
 @app.route('/pdf_create',methods=['POST'])
 
