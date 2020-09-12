@@ -1,5 +1,6 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,send_file
 import program_manger as pm
+import os,time
 
 
 app=Flask(__name__,template_folder="../web_page",static_folder="../style")
@@ -8,6 +9,9 @@ obj=pm.create_table()
 @app.route('/')
 
 def settings():
+    for i in os.listdir("../uploads"):
+        if time.time()-os.path.getmtime("../uploads/"+i)>900:
+            os.remove("../uploads/"+i)
     return render_template("first.html")
 
 @app.route('/create',methods=['POST'])
@@ -33,6 +37,11 @@ def made():
             obj.data[l][i][1]=int(request.form[str(l)+str(i)+"duration"])
     obj.web2pdf()
     return render_template("final_page.html")
+
+@app.route("/download",methods=["POST","GET"])
+
+def download():
+    return send_file('../uploads/'+obj.file_name+".pdf",as_attachment=True)
 
 if __name__=="__main__":
     app.run(debug=True,port=4000)

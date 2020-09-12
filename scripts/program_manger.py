@@ -89,4 +89,4 @@ class create_table:
         pdf_object.ln(20)
         pdf_object.cell(pdf_object.w,txt=to_say)
             
-        pdf_object.output(self.file_name+".pdf")
+        pdf_object.output("../uploads/"+self.file_name+".pdf")
