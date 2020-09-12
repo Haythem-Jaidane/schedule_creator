@@ -1,3 +1,10 @@
+body{
+    background: rgb(21,41,205);
+    background: linear-gradient(90deg, rgba(21,41,205,1) 0%, 
+                    rgba(48,114,201,1) 50%, rgba(38,255,251,1) 100%);
+    overflow:scroll-x;
+}
+
 .page_content{
     margin: 145px 25%;
     width: 45%;
