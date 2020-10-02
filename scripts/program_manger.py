@@ -34,7 +34,7 @@ class create_table:
         
         date_data=[("    ",1)]
         for z in range(self.week_day,self.week_day+self.number):
-            date_data.append(date_str[z%6])
+            date_data.append(date_str[z%7])
         self.data.append(date_data)
         for i in range(self.start_hour,self.end_hour):
             row=[(str(i)+"h to "+str(i+1)+"h",1)]

@@ -32,6 +32,17 @@ def create():
     except:
         obj.Error=True
         return redirect('/')
+    start=request.form["start"]
+    obj.file_name=request.form["name"]
+    obj.number=int(request.form["day_number"])
+    obj.start_hour=int(request.form["wakeup"])
+    obj.end_hour=int(request.form["sleep"])
+    obj.duration=int(request.form["sleep"])-int(request.form["wakeup"])
+    obj.date_system(start)
+    obj.create_data()
+    data_table={"table":obj.data,"num":obj.number,"duration":obj.duration}
+    obj.Error=False
+    return render_template("index.html",table=data_table)
 
 @app.route('/pdf_create',methods=['POST'])
 
