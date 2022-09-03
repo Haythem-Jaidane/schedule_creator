@@ -1,56 +1,85 @@
-body{
-    background: rgb(21,41,205);
-    background: linear-gradient(90deg, rgba(21,41,205,1) 0%, 
-                    rgba(48,114,201,1) 50%, rgba(38,255,251,1) 100%);
-    overflow:scroll-x;
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.big-cont{
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
+.description-container {
+  text-align: center;
+  background-color: white;
+  color: rgb(45, 45, 45);
+  box-shadow: 0 24px 64px #26214a1a;
+  border-radius: 15px;
+  display: inline-block;
+  padding: 0 30px 15px 30px;
+  margin-top: 60px;
+  box-sizing: border-box;
 }
 
-.contain{
-    
-    text-align:center;
-    color:white;
-    font-family:'Times New Roman', Times, serif;
-    font-size:200%;
-    font-weight: bolder;
-    padding:6%;
-    width: 100%;
+.title {
+  font-family: "Cairo", sans-serif;
+  font-size: 40px;
+  padding: 0;
+  margin: 0;
+}
+.description {
+  font-family: "Sora", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.explain{
-    text-align:center;
-    font-family: "Arial Black", Gadget, sans-serif;
-    font-size:35px;
-    margin-top: 100px;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.box{
-    padding:20px;
-    width:75%;
-    border-radius:20px;
-    font-family:'Times New Roman', Times, serif;
-    font-size:30px;
-    font-weight: bolder;
-    margin:20px 0px;
-    border: 3px solid white;
+.warning {
+  box-sizing: border-box;
+  color: rgb(255, 106, 0);
+  border: 1px solid rgb(255, 106, 0);
+  padding: 10px 5px;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
 }
 
-.enter{
-    padding: 10px 20px;
-    margin-top: 50px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-    color:white ;
-    font-size: 40px;
-    border: 3px solid white;
-    border-radius: 35%;
-    background-color: initial;
-
+.form-container {
+  font-family: "Cairo", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  width: 600px;
+  box-sizing: border-box;
+  padding: 5px 0 40px 0;
 }
 
+.form-container input {
+  font-family: "Cairo", sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 24px 64px #26214a1a;
+}
 
+.form-container div {
+  margin-bottom: 10px;
+}
+
+.form-container input[type="submit"] {
+  margin-top: 15px;
+  background-color: dodgerblue;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.form-container input[type="submit"]:hover {
+  background-color: rgb(101, 178, 255);
+}

@@ -1,39 +1,37 @@
-body{
-    background: rgb(21,41,205);
-    background: linear-gradient(90deg, rgba(21,41,205,1) 0%, 
-                    rgba(48,114,201,1) 50%, rgba(38,255,251,1) 100%);
-    overflow:scroll-x;
+body {
+  font-family: "Cairo", sans-serif;
 }
 
-h1{
-    display:flex;
-    justify-content:center;
-    margin:80px 0px;
+h1 {
+  margin-top: 50px;
 }
 
-a{
-    text-decoration-line: none;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    color: white;
-    font-size: 25px;
-    margin:80px 0px;
-
+a {
+  text-decoration-line: none;
+  text-align: center;
+  font-size: 25px;
+  margin: 80px 0px;
 }
 
-form,div{
-    display:flex;
-    justify-content:center;
-    
+form,
+div {
+  display: flex;
+  justify-content: center;
 }
 
-input{
-    background-color:initial;
-    font-family: 'Times New Roman', Times, serif;
-    color: white;
-    font-size: 25px;
-    border: 1px solid white;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 80px 0px;
+input {
+  background-color: initial;
+  font-family: "Cairo", sans-serif !important;
+  background-color: dodgerblue;
+  cursor: pointer;
+  color: white;
+  font-size: 25px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: background-color 0.5s ease;
+}
+
+input:hover {
+  background-color: rgb(100, 178, 255);
 }

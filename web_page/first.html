@@ -1,39 +1,95 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>settings</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../style/first.css">
-    </head>
-    <body>
-        <p class="explain">
-            this web site help you do make your own schedule of the week
-            <br/>
-            "time is money" 
+  <head>
+    <title>settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/global.css" />
+    <link rel="stylesheet" href="../style/first.css" />
+  </head>
+  <body>
+    <!-- <p class="explain">
+      this web site help you do make your own schedule of the week
+      <br />
+      "time is money"
+    </p> -->
+    <header>
+      <div class="description-container">
+        <h1 class="title">SCHEDULE CREATOR</h1>
+        <p class="description">
+          This app helps you create your own schedule, faster than before.
         </p>
-        <div class="big-cont">
-            {% if error.er_bool==True%}
-            {% block content %}
-            <div class="error_block">
-                <p> check your input data </p>
-            </div>
-            {% endblock content%}
-        {% endif %}
-        <div class="contain">
-            <form method="POST" action="/create">
-                <input placeholder="when (week) your schedule start (monday)" onfocus="(this.type='date')" onblur="(this.type='text')" type="text" name="start" class="box" >
-                <br/>
-                <input type="number" name="day_number" min=1 max=7 class="box" placeholder="number of days of schedule(min 1 day max 7 day)">
-                <br/>
-                <input type="number" name="wakeup" min=0 max=23 class="box" placeholder="when you wake up">
-                <br/>
-                <input type="number" placeholder="when you sleep" name="sleep" min=0 max=23 class="box">
-                <br/>
-                <input type="text" placeholder="name of file" name="name" class="box">
-                <br/>
-                <input type="submit" value="Create" class="enter">
-            </form>
-        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div class="form-container">
+        <form method="POST" action="/create">
+          <div>
+            {% if error.er_bool==True%} {% block content %}
+            <p class="warning">Please fill the form correctly</p>
+            {% endblock content%} {% endif %}
+            <label for="start">Starting day</label>
+            <input
+              placeholder="specify your starting day"
+              onfocus="(this.type='date')"
+              onblur="(this.type='text')"
+              type="text"
+              id="start"
+              name="start"
+              class="box"
+            />
+          </div>
+
+          <div>
+            <label for="day_number">How many days (min: 1, max: 7)</label>
+            <input
+              type="number"
+              name="day_number"
+              id="day_number"
+              min="1"
+              max="7"
+              class="box"
+              placeholder="Number of days"
+            />
+          </div>
+          <div>
+            <label for="wakup">When do you wake up?</label>
+            <input
+              type="number"
+              name="wakeup"
+              id="wakeup"
+              min="0"
+              max="23"
+              class="box"
+              placeholder="Waking up time (example: 8)"
+            />
+          </div>
+          <div>
+            <label for="sleep">When do you sleep?</label>
+            <input
+              type="number"
+              placeholder="Sleeping time (example: 22)"
+              name="sleep"
+              id="sleep"
+              min="0"
+              max="23"
+              class="box"
+            />
+          </div>
+          <div>
+            <label for="name"
+              >Name the file that is going to be downloaded.</label
+            >
+            <input
+              type="text"
+              placeholder="name of file"
+              id="name"
+              name="name"
+              class="box"
+            />
+          </div>
+          <input type="submit" value="Create" />
+        </form>
+      </div>
     </div>
-    </body>
+  </body>
 </html>

@@ -1,79 +1,130 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>create a schedule</title>
-        <link rel="stylesheet" href="../style/index.css">
-        <script type="text/javascript" src="{{ url_for('static', filename='./js_script/tabs.js')}}"></script>
-    </head>
-    <body>
-        <div class="big_content_0">
-        <div class="page_content">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create a schedule</title>
+    <link rel="stylesheet" href="../style/index.css" />
+    <link rel="stylesheet" href="../style/global.css" />
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='./js_script/tabs.js')}}"
+    ></script>
+  </head>
+  <body>
+    <div class="big_content_0">
+      <div class="page_content">
         <div class="day_tab">
-            {% for i in range(1,table.num+1) %}
-                    <button class="days" onclick="days_tabs(event,'{{table.table[0][i][0]}}')">
-                        {{table.table[0][i][0]}}
-                    </button>
-            {% endfor %}
-        </div> 
-            <form method="POST" action="/pdf_create">
-            {% for i in range(1,table.num+1) %}
-                <div class="days_content" id={{table.table[0][i][0]}}>
-                    <table>
-                    <tr>
-                        <td style="padding:10px 2%;" class="header_tags">hour</td>
-                        <td style="padding:10px 12%;" class="header_tags">activity</td>
-                        <td style="padding:10px 10%;" class="header_tags">duration</td>
-                    </tr>
-                    {% for l in range(1,table.duration+1)%}
-                    <tr>
-                        <td class="time_label"><label>{{table.table[l][0][0]}}</label></td>
-                        <td style="padding-left:50px;"><input class="ac_text" type="text" name="{{l}}{{i}}time" value="{{table.table[l][i][0]}}" ></td>
-                        <td><input class="dur_text" type="number" name="{{l}}{{i}}duration" value="{{table.table[l][i][1]}}"></td>
-                    </tr>
-                    {% endfor %}
-                </table>
-                </div>
-            {% endfor %}
-            <div id="sub">
-                <input type="submit" value="Create your PDF file">
-            </div>
+          {% for i in range(1,table.num+1) %}
+          <button
+            class="days"
+            onclick="days_tabs(event,'{{table.table[0][i][0]}}')"
+          >
+            {{table.table[0][i][0]}}
+          </button>
+          {% endfor %}
+        </div>
+        <form method="POST" action="/pdf_create">
+          {% for i in range(1,table.num+1) %}
+          <div class="days_content" id="{{table.table[0][i][0]}}">
+            <table>
+              <tr>
+                <td style="padding: 10px 2%" class="header_tags">hour</td>
+                <td style="padding: 10px 12%" class="header_tags">activity</td>
+                <td style="padding: 10px 10%" class="header_tags">duration</td>
+              </tr>
+              {% for l in range(1,table.duration+1)%}
+              <tr>
+                <td class="time_label">
+                  <label>{{table.table[l][0][0]}}</label>
+                </td>
+                <td style="padding-left: 50px">
+                  <input
+                    class="ac_text"
+                    type="text"
+                    name="{{l}}{{i}}time"
+                    value="{{table.table[l][i][0]}}"
+                  />
+                </td>
+                <td style="position: relative">
+                  <input
+                    class="dur_text"
+                    type="number"
+                    name="{{l}}{{i}}duration"
+                    value="{{table.table[l][i][1]}}"
+                  />
+                  <span
+                    style="
+                      position: absolute;
+                      right: 10px;
+                      top: 20px;
+                      font-size: 18px;
+                    "
+                    >Hour</span
+                  >
+                </td>
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+          {% endfor %}
+          <div id="sub">
+            <input type="submit" value="Generate PDF" />
+          </div>
         </form>
+      </div>
+    </div>
+    <div class="big_content_1">
+      <div class="page_content">
+        <div class="day_tab">
+          {% for i in range(1,table.num+1) %}
+          <button
+            class="days"
+            onclick="days_tabs(event,'{{table.table[0][i][0]}}')"
+          >
+            {{table.table[0][i][0]}}
+          </button>
+          {% endfor %}
         </div>
-        </div>
-        <div class="big_content_1">
-            <div class="page_content">
-            <div class="day_tab">
-                {% for i in range(1,table.num+1) %}
-                        <button class="days" onclick="days_tabs(event,'{{table.table[0][i][0]}}')">
-                            {{table.table[0][i][0]}}
-                        </button>
-                {% endfor %}
-            </div> 
-                <form method="POST" action="/pdf_create">
-                {% for i in range(1,table.num+1) %}
-                    <div class="days_content" id={{table.table[0][i][0]}}>
-                        <table>
-                        <tr>
-                            <td style="padding:10px 2%;" class="header_tags">hour</td>
-                            <td style="padding:10px 12%;" class="header_tags">activity</td>
-                            <td style="padding:10px 10%;" class="header_tags">duration</td>
-                        </tr>
-                        {% for l in range(1,table.duration+1)%}
-                        <tr>
-                            <td class="time_label"><label>{{table.table[l][0][0]}}</label></td>
-                            <td style="padding-left:10px;"><input class="ac_text" type="text" name="{{l}}{{i}}time" value="{{table.table[l][i][0]}}" ></td>
-                            <td><input class="dur_text" type="number" name="{{l}}{{i}}duration" value="{{table.table[l][i][1]}}"></td>
-                        </tr>
-                        {% endfor %}
-                    </table>
-                    </div>
-                {% endfor %}
-                <div id="sub">
-                    <input type="submit" value="Create your PDF file">
-                </div>
-            </form>
-            </div>
-            </div>
-    </body>
+        <form method="POST" action="/pdf_create">
+          {% for i in range(1,table.num+1) %}
+          <div class="days_content" id="{{table.table[0][i][0]}}">
+            <table>
+              <tr>
+                <td style="padding: 10px 2%" class="header_tags">hour</td>
+                <td style="padding: 10px 12%" class="header_tags">activity</td>
+                <td style="padding: 10px 10%" class="header_tags">duration</td>
+              </tr>
+              {% for l in range(1,table.duration+1)%}
+              <tr>
+                <td class="time_label">
+                  <label>{{table.table[l][0][0]}}</label>
+                </td>
+                <td style="padding-left: 10px">
+                  <input
+                    class="ac_text"
+                    type="text"
+                    name="{{l}}{{i}}time"
+                    value="{{table.table[l][i][0]}}"
+                  />
+                </td>
+                <td>
+                  <input
+                    class="dur_text"
+                    type="number"
+                    name="{{l}}{{i}}duration"
+                    value="{{table.table[l][i][1]}}"
+                  />
+                </td>
+              </tr>
+              {% endfor %}
+            </table>
+          </div>
+          {% endfor %}
+          <div id="sub">
+            <input type="submit" value="Generate PDF" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
