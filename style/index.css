@@ -1,131 +1,143 @@
-body{
-    background: linear-gradient(90deg, rgba(21,41,205,1) 0%, 
-                    rgba(48,114,201,1) 50%, rgba(38,255,251,1) 100%);
-    overflow:scroll-x;
+.big_content_0 {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
-.big_content_0{
-    display:flex;
-    justify-content: center;
-    margin-top: 50px;
+.page_content {
+  width: 90%;
 }
 
-.page_content{
-    width: 90%;
+.days {
+  color: white;
+  font-family: "Cairo", sans-serif;
+  background-color: initial;
+  border: none;
+  font-size: 100%;
+  font-weight: bolder;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.days{
-    color:black;
-    background-color: initial;
-    border:none;
-    font-family:'Times New Roman', Times, serif;
-    font-size:100%;
-    font-weight: bolder;
-    padding:10px;
+.days:hover {
+  background-color: rgb(94, 94, 94);
 }
 
-.day_tab{
-    display: flex;
-    justify-content:center;
-    border: 2px solid white;
-    background-color: white;
-    width:100% ;
-    
+.day_tab {
+  display: flex;
+  justify-content: center;
+  border: 2px solid white;
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  border-radius: 10px;
 }
 
-.days_content{
-    display: none;
-    border: 2px solid white;
-    width:100% ;
+.days_content {
+  display: none;
+  border: 2px solid rgb(0, 0, 0);
+  width: 100%;
+  border-radius: 10px;
 }
 
-table{
-    display: flex;
-    justify-content:center;
-    margin:20px 10px;
+table {
+  display: flex;
+  justify-content: center;
+  margin: 20px 10px;
 }
 
-.header_tags{
-    color:white;
-    font-family:'Times New Roman', Times, serif;
-    font-size:140%;
-    font-weight: bolder;
-    text-align: center;
-
+.header_tags {
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 140%;
+  font-weight: bolder;
+  text-align: center;
+  font-family: "Cairo", sans-serif !important;
 }
 
-.time_label{
-    color:black;
-    font-family:'Times New Roman', Times, serif;
-    font-size:25px;
-    font-weight: bolder;
-    padding-left:50px;
-    width:40%;
-    margin: 10px 0px;
+.time_label {
+  color: black;
+  font-family: "Cairo", sans-serif;
+  font-size: 25px;
+  font-weight: bolder;
+  padding-left: 50px;
+  width: 40%;
+  margin: 10px 0px;
 }
 
-.ac_text{
-    background-color:initial;
-    border: 2px solid white;
-    border-radius: 10px;
-    color:whitesmoke;
-    font-family:'Times New Roman', Times, serif;
-    font-size:20px;
-    width: 100%;
-    margin: 10px 0px;
-    
+.ac_text {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  width: 100%;
+  margin: 10px 0px;
 }
 
-.dur_text{
-    background-color:initial;
-    border: 2px solid white;
-    border-radius: 10px;
-    color:whitesmoke;
-    font-family:'Times New Roman', Times, serif;
-    font-size:20px;
-    width: 25%;
-    margin: 10px 39%;
+.dur_text {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+
+  font-size: 20px;
+  width: 25%;
+  margin: 10px 39%;
 }
 
-.active{
-    background-color:lightskyblue;
+.active {
+  background-color: rgb(145, 145, 145);
 }
 
-#sub{
-    display: flex;
-    justify-content:center;
-    margin:50px 0px;
+#sub {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0px;
 }
 
-#sub > input{
-    background-color: initial;
-    color:white;
-    font-family:'Times New Roman', Times, serif;
-    font-size:20px;
-    font-weight: bolder;
-    border:2px solid white;
-    border-radius: 20px;
-    padding:10px;
+#sub > input {
+  background-color: initial;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  font-weight: bolder;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 10px;
 }
 
-.big_content_1{
-    display: none;
+.big_content_1 {
+  display: none;
 }
 
-@media only screen and (max-width: 675px){
-    .page_content{
-        width: 101%;
-    }
+@media only screen and (max-width: 675px) {
+  .page_content {
+    width: 101%;
+  }
 
-    .days{
-        font-size: 14px;
-        padding:5px;
-    }
+  .days {
+    font-size: 14px;
+    padding: 5px;
+  }
 }
 
-@media only screen and (max-width: 450px){
-    .day_tab{
-        display: block;
+@media only screen and (max-width: 450px) {
+  .day_tab {
+    display: block;
+  }
+}
 
-    }
+input {
+  border: 1px solid black !important;
+}
+
+input[type="submit"] {
+  border: none !important;
+  background-color: dodgerblue !important;
+  border-radius: 5px !important;
+  font-family: "Cairo", sans-serif !important;
+  font-weight: 400 !important;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+input[type="submit"]:hover {
+  background-color: rgb(89, 172, 255) !important;
 }
