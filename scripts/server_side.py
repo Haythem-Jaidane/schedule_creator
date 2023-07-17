@@ -7,11 +7,10 @@ app=Flask(__name__,template_folder="../web_page",static_folder="../style")
 obj=pm.create_table()
 
 @app.route('/')
-
 def settings():
     for i in os.listdir("../uploads"):
-        if time.time()-os.path.getmtime("../uploads/"+i)>900:
-            os.remove("../uploads/"+i)
+        if time.time() - os.path.getmtime(f"../uploads/{i}") > 900:
+            os.remove(f"../uploads/{i}")
     return render_template("first.html",error={"er_bool":obj.Error})
 
 @app.route('/create',methods=['POST'])
@@ -55,9 +54,8 @@ def made():
     return render_template("final_page.html")
 
 @app.route("/download",methods=["POST","GET"])
-
 def download():
-    return send_file('../uploads/'+obj.file_name+".pdf",as_attachment=True)
+    return send_file(f'../uploads/{obj.file_name}.pdf', as_attachment=True)
 
 if __name__=="__main__":
     app.run(debug=True,port=4000)
